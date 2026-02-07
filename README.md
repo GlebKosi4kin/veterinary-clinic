@@ -82,6 +82,14 @@ docker-compose down -v
 ## Структура БД
 ![Структура бд](bd.jpeg)
 Ссылка на моделирование структуры: https://drawdb.vercel.app/editor?shareId=46bfb06c00a9e121a6ed231980cd787f
+
+### Схема:
+- owners: id, firstname, lastname, address, city, telephone, createdAt
+- pets: id, name, birthdate, type, ownerid, createdAt
+- vets: id, first_name, last_name, specialty, createdAt
+- visits: id, visit_date, description, petid, vetid,createdAt
+- patient_card: id, pet_Id, notes, createdAt
+
 ## Эндпоинты
 
 ### Owner
@@ -121,15 +129,6 @@ docker-compose down -v
 - `put /api/patient-cards/{id}"` - Обновить карту пациента
 - `delete /api/patient-cards/{id}"` - Удалить карту пациента
 
-## База данных
-
-### Схема:
-- Owner: id, firstname, lastname, address, city, telephone, createdAt
-- Pet: id, name, birthdate, type, ownerid, createdAt
-- Vet: id, firstname, lastname, specialty, createdAt
-- Visit: id, visit_date, description, petid, vetid,createdAt
-- PatientCard: id, petId, notes, createdAt
-- 
 ### Тестовые данные:
 При первом запуске автоматически создаются тестовые данные:
 - 3 владельца
